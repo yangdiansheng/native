@@ -30,7 +30,8 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         native-lib.cpp
-        ${CMAKE_SOURCE_DIR}/basic-type-operation.cpp)
+        ${CMAKE_SOURCE_DIR}/basic-type-operation.cpp
+        ${CMAKE_SOURCE_DIR}/string-type-operation.cpp)
 add_library(people-lib
         SHARED #动态库
         people/people.cpp)

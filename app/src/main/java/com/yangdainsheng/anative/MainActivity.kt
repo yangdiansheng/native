@@ -2,11 +2,14 @@ package com.yangdainsheng.anative
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.yangdainsheng.operations.JNIBasicType
+import com.yangdainsheng.operations.StringType
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     val jniBasicType = JNIBasicType()
+    val stringType = StringType()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,9 @@ class MainActivity : AppCompatActivity() {
                 "callNativeFloat = ${jniBasicType.callNativeFloat(2.0f)}\n" +
                 "callNativeDouble = ${jniBasicType.callNativeDouble(12.0)}\n" +
                 "callNativeBoolean = ${jniBasicType.callNativeBoolean(false)}\n"
+        tv_string.text = "getAndReleaseString = ${stringType.getAndReleaseString("abcdefg")}\n" +
+                "reverseString = ${stringType.reverseString("abcdefg")}\n" +
+                "getHalfString = ${stringType.getHalfString("abcdefg")}\n"
     }
 
     /**

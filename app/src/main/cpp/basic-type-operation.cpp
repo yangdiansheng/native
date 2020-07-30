@@ -22,7 +22,7 @@
 //typedef double   jdouble;  /* 64-bit IEEE 754 */
 
 extern "C"
-JNIEXPORT jint JNICALL Java_com_yangdainsheng_anative_JNIBasicType_callNativeInt(JNIEnv *env, jobject thiz,jint num) {
+JNIEXPORT jint JNICALL Java_com_yangdainsheng_operations_JNIBasicType_callNativeInt(JNIEnv *env, jobject thiz,jint num) {
     LOGD("java int value is %d", num);
     int c_num = num * 2;
     return c_num;
@@ -30,7 +30,7 @@ JNIEXPORT jint JNICALL Java_com_yangdainsheng_anative_JNIBasicType_callNativeInt
 
 extern "C"
 JNIEXPORT jbyte JNICALL
-Java_com_yangdainsheng_anative_JNIBasicType_callNativeByte(JNIEnv *env, jobject thiz, jbyte b) {
+Java_com_yangdainsheng_operations_JNIBasicType_callNativeByte(JNIEnv *env, jobject thiz, jbyte b) {
     LOGD("java byte value is %d", b);
     jbyte c_byte = b + (jbyte) 10;
     return c_byte;
@@ -38,7 +38,7 @@ Java_com_yangdainsheng_anative_JNIBasicType_callNativeByte(JNIEnv *env, jobject 
 
 extern "C"
 JNIEXPORT jchar JNICALL
-Java_com_yangdainsheng_anative_JNIBasicType_callNativeChar(JNIEnv *env, jobject thiz, jchar a) {
+Java_com_yangdainsheng_operations_JNIBasicType_callNativeChar(JNIEnv *env, jobject thiz, jchar a) {
     LOGD("java char value is %c", a);
     jchar c_char = a + (jchar) 3;
     return c_char;
@@ -46,7 +46,7 @@ Java_com_yangdainsheng_anative_JNIBasicType_callNativeChar(JNIEnv *env, jobject 
 
 extern "C"
 JNIEXPORT jshort JNICALL
-Java_com_yangdainsheng_anative_JNIBasicType_callNativeShort(JNIEnv *env, jobject thiz, jshort s) {
+Java_com_yangdainsheng_operations_JNIBasicType_callNativeShort(JNIEnv *env, jobject thiz, jshort s) {
     LOGD("java char value is %d", s);
     jshort c_short = s + (jshort) 10;
     return c_short;
@@ -54,7 +54,7 @@ Java_com_yangdainsheng_anative_JNIBasicType_callNativeShort(JNIEnv *env, jobject
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_com_yangdainsheng_anative_JNIBasicType_callNativeLong(JNIEnv *env, jobject thiz, jlong l) {
+Java_com_yangdainsheng_operations_JNIBasicType_callNativeLong(JNIEnv *env, jobject thiz, jlong l) {
     LOGD("java long value is %lld", l);
     jlong c_long = l + 100;
     return c_long;
@@ -62,7 +62,7 @@ Java_com_yangdainsheng_anative_JNIBasicType_callNativeLong(JNIEnv *env, jobject 
 
 extern "C"
 JNIEXPORT jfloat JNICALL
-Java_com_yangdainsheng_anative_JNIBasicType_callNativeFloat(JNIEnv *env, jobject thiz, jfloat f) {
+Java_com_yangdainsheng_operations_JNIBasicType_callNativeFloat(JNIEnv *env, jobject thiz, jfloat f) {
     LOGD("java float value is %f", f);
     jfloat c_float = f + (jfloat) 10.0;
     return c_float;
@@ -70,7 +70,7 @@ Java_com_yangdainsheng_anative_JNIBasicType_callNativeFloat(JNIEnv *env, jobject
 
 extern "C"
 JNIEXPORT jdouble JNICALL
-Java_com_yangdainsheng_anative_JNIBasicType_callNativeDouble(JNIEnv *env, jobject thiz, jdouble d) {
+Java_com_yangdainsheng_operations_JNIBasicType_callNativeDouble(JNIEnv *env, jobject thiz, jdouble d) {
     LOGD("java double value is %f", d);
     jdouble c_double = d + 20.0;
     return c_double;
@@ -78,7 +78,7 @@ Java_com_yangdainsheng_anative_JNIBasicType_callNativeDouble(JNIEnv *env, jobjec
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_yangdainsheng_anative_JNIBasicType_callNativeBoolean(JNIEnv *env, jobject thiz,
+Java_com_yangdainsheng_operations_JNIBasicType_callNativeBoolean(JNIEnv *env, jobject thiz,
                                                               jboolean b) {
     LOGD("java boolean value is %d", b);
     jboolean c_bool = (jboolean) !b;
