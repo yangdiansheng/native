@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
      */
     external fun stringFromJNI(): String
 
+    //静态注册
+    external fun getString(): String
+
     companion object {
         // Used to load the 'native-lib' library on application startup.
         init {
