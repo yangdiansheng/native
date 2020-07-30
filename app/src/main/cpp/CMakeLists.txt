@@ -29,7 +29,8 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        native-lib.cpp)
+        native-lib.cpp
+        ${CMAKE_SOURCE_DIR}/basic-type-operation.cpp)
 add_library(people-lib
         SHARED #动态库
         people/people.cpp)
@@ -41,10 +42,10 @@ add_library(people-lib
 # completing its build.
 
 include_directories(people/) #查找代码
+include_directories(${CMAKE_SOURCE_DIR}/common/)
 
 find_library( # Sets the name of the path variable.
         log-lib
-
         # Specifies the name of the NDK library that
         # you want CMake to locate.
         log)

@@ -6,12 +6,22 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    val jniBasicType = JNIBasicType()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Example of a call to a native method
         sample_text.text = stringFromJNI()
+        tv_int.text = "callNativeInt = ${jniBasicType.callNativeInt(1)}\n" +
+                "callNativeByte = ${jniBasicType.callNativeByte(2)}\n" +
+                "callNativeChar = ${jniBasicType.callNativeChar('a')}\n" +
+                "callNativeShort = ${jniBasicType.callNativeShort(5)}\n" +
+                "callNativeLong = ${jniBasicType.callNativeLong(10L)}\n" +
+                "callNativeFloat = ${jniBasicType.callNativeFloat(2.0f)}\n" +
+                "callNativeDouble = ${jniBasicType.callNativeDouble(12.0)}\n" +
+                "callNativeBoolean = ${jniBasicType.callNativeBoolean(false)}\n"
     }
 
     /**
