@@ -1,10 +1,9 @@
 package com.yangdainsheng.bean
 
 import android.util.Log
+import com.yangdainsheng.utils.LogUtil
 
-class Animal {
-
-    var name:String = ""
+open class Animal(open var name:String = "") {
 
     companion object{
         var num = 0
@@ -21,7 +20,7 @@ class Animal {
     }
 
     fun instanceMethod(num:Int){
-        Log.d("yyy","instanceMethod num=$num")
+        LogUtil.d("instanceMethod num=$num")
     }
 
 

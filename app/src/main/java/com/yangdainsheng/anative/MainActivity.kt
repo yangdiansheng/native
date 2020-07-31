@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import com.yangdainsheng.bean.Animal
 import com.yangdainsheng.bean.ICallBack
-import com.yangdainsheng.operations.FiledAndMethodOp
-import com.yangdainsheng.operations.JNIBasicType
-import com.yangdainsheng.operations.StringType
-import com.yangdainsheng.operations.ThreadOp
+import com.yangdainsheng.operations.*
+import com.yangdainsheng.utils.LogUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     val stringType = StringType()
     val filedAndMethodOp = FiledAndMethodOp()
     val threadOp = ThreadOp()
+    val invokeConstructorOp = InvokeConstructorOp()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         tv_callback.setOnClickListener {
             filedAndMethodOp.callCallback(object :ICallBack{
                 override fun callBackMethod() {
-                    Log.d("yyy", "callBackMethod")
+                    LogUtil.d("callBackMethod")
                 }
             })
         }
@@ -57,6 +56,12 @@ class MainActivity : AppCompatActivity() {
             threadOp.createNativeThread()
 //            threadOp.nativeFree()
         }
+        val animal2 = invokeConstructorOp.invokeAnimalConstructor()
+        val animal3 = invokeConstructorOp.allocObjectConstructor()
+        tv_constructor.text = "invokeStringConstructor = ${invokeConstructorOp.invokeStringConstructor()}\n" +
+                "invokeAnimalConstructor = ${animal2.name}\n" +
+                "allocObjectConstructor = ${animal3.name}\n" +
+                "callSuperMethod = ${invokeConstructorOp.callSuperMethod()}\n"
     }
 
     /**

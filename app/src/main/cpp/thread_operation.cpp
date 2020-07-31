@@ -24,7 +24,9 @@ JNIEXPORT int JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     return JNI_VERSION_1_6;
 }
 
-
+/**
+ * 创建线程
+ */
 extern "C" JNIEXPORT void JNICALL
 Java_com_yangdainsheng_operations_ThreadOp_createNativeThread(JNIEnv *env, jobject thiz) {
     pthread_t thread;

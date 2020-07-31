@@ -12,6 +12,17 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_constructor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="constructor"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark"/>
+
+        <TextView
             android:id="@+id/tv_object"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
