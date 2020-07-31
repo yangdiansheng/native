@@ -38,7 +38,9 @@ class MainActivity : AppCompatActivity() {
         filedAndMethodOp.callFiled(animal)
         filedAndMethodOp.callStaticFiled(animal)
         tv_object.text = "callFiled = ${animal.name}\n" +
-                "callStaticFiled = ${Animal.num}\n"
+                "callStaticFiled = ${Animal.num}\n" +
+                "callIntanceMethod = ${filedAndMethodOp.callIntanceMethod(animal)}\n" +
+                "callStaticMethod = ${filedAndMethodOp.callStaticMethod(animal)}\n"
     }
 
     /**
