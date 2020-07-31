@@ -74,3 +74,13 @@ Java_com_yangdainsheng_operations_FiledAndMethodOp_callStaticMethod(JNIEnv *env,
     }
     env->CallStaticObjectMethod(cls,mid2,arr,3);
 }
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_yangdainsheng_operations_FiledAndMethodOp_callCallback(JNIEnv *env, jobject thiz,
+                                                                jobject call) {
+    jclass cls = env->GetObjectClass(call);
+    jmethodID mid = env->GetMethodID(cls,"callBackMethod", "()V");
+    if(mid == NULL) return;
+    env->CallVoidMethod(call,mid);
+}

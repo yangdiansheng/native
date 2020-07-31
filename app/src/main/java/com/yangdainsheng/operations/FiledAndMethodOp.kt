@@ -1,6 +1,7 @@
 package com.yangdainsheng.operations
 
 import com.yangdainsheng.bean.Animal
+import com.yangdainsheng.bean.ICallBack
 
 class FiledAndMethodOp {
 
@@ -8,4 +9,5 @@ class FiledAndMethodOp {
     external fun callStaticFiled(animal:Animal)
     external fun callIntanceMethod(animal: Animal)
     external fun callStaticMethod(animal: Animal):String
+    external fun callCallback(call: ICallBack)
 }

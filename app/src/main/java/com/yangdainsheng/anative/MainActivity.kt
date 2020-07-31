@@ -2,7 +2,9 @@ package com.yangdainsheng.anative
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.yangdainsheng.bean.Animal
+import com.yangdainsheng.bean.ICallBack
 import com.yangdainsheng.operations.FiledAndMethodOp
 import com.yangdainsheng.operations.JNIBasicType
 import com.yangdainsheng.operations.StringType
@@ -41,6 +43,13 @@ class MainActivity : AppCompatActivity() {
                 "callStaticFiled = ${Animal.num}\n" +
                 "callIntanceMethod = ${filedAndMethodOp.callIntanceMethod(animal)}\n" +
                 "callStaticMethod = ${filedAndMethodOp.callStaticMethod(animal)}\n"
+        tv_callback.setOnClickListener {
+            filedAndMethodOp.callCallback(object :ICallBack{
+                override fun callBackMethod() {
+                    Log.d("yyy", "callBackMethod")
+                }
+            })
+        }
     }
 
     /**
