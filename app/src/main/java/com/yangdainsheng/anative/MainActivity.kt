@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
                 "callNativeBoolean = ${jniBasicType.callNativeBoolean(false)}\n"
         tv_string.text = "getAndReleaseString = ${stringType.getAndReleaseString("abcdefg")}\n" +
                 "reverseString = ${stringType.reverseString("abcdefg")}\n" +
-                "getHalfString = ${stringType.getHalfString("abcdefg")}\n"
+                "getHalfString = ${stringType.getHalfString("abcdefg")}\n" +
+                "callNativeStringArray = ${stringType.callNativeStringArray(arrayOf("aaaa","bbbb","cccc"))}\n"
     }
 
     /**

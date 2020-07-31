@@ -54,3 +54,18 @@ Java_com_yangdainsheng_operations_StringType_getHalfString(JNIEnv *env, jobject 
     env->ReleaseStringUTFChars(s,str);
     return env->NewString(res,len/2);
 }
+
+/**
+ * 获取数组的第一个元素
+ */
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_yangdainsheng_operations_StringType_callNativeStringArray(JNIEnv *env, jobject thiz,
+                                                                   jobjectArray arr) {
+    int len = env->GetArrayLength(arr);
+    LOGD("arr length %d", len);
+    jstring str = static_cast<jstring >(env->GetObjectArrayElement(arr,0));
+    const char *s = env->GetStringUTFChars(str,0);
+    env->ReleaseStringUTFChars(str,s);
+    return env->NewStringUTF(s);
+}

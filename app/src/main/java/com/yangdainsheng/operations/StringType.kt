@@ -11,4 +11,5 @@ class StringType {
     external fun getAndReleaseString(s:String): String
     external fun reverseString(s:String): String
     external fun getHalfString(s:String): String
+    external fun callNativeStringArray(arr:Array<String>): String
 }
