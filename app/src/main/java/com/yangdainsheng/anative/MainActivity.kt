@@ -2,6 +2,8 @@ package com.yangdainsheng.anative
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.yangdainsheng.bean.Animal
+import com.yangdainsheng.operations.FiledAndMethodOp
 import com.yangdainsheng.operations.JNIBasicType
 import com.yangdainsheng.operations.StringType
 import kotlinx.android.synthetic.main.activity_main.*
@@ -10,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     val jniBasicType = JNIBasicType()
     val stringType = StringType()
+    val filedAndMethodOp = FiledAndMethodOp()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +32,13 @@ class MainActivity : AppCompatActivity() {
                 "reverseString = ${stringType.reverseString("abcdefg")}\n" +
                 "getHalfString = ${stringType.getHalfString("abcdefg")}\n" +
                 "callNativeStringArray = ${stringType.callNativeStringArray(arrayOf("aaaa","bbbb","cccc"))}\n"
+        val animal = Animal()
+        animal.name = "java animal"
+        Animal.num = 3333
+        filedAndMethodOp.callFiled(animal)
+        filedAndMethodOp.callStaticFiled(animal)
+        tv_object.text = "callFiled = ${animal.name}\n" +
+                "callStaticFiled = ${Animal.num}\n"
     }
 
     /**
