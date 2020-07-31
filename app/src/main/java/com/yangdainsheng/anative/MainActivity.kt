@@ -8,6 +8,7 @@ import com.yangdainsheng.bean.ICallBack
 import com.yangdainsheng.operations.FiledAndMethodOp
 import com.yangdainsheng.operations.JNIBasicType
 import com.yangdainsheng.operations.StringType
+import com.yangdainsheng.operations.ThreadOp
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     val jniBasicType = JNIBasicType()
     val stringType = StringType()
     val filedAndMethodOp = FiledAndMethodOp()
+    val threadOp = ThreadOp()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +51,11 @@ class MainActivity : AppCompatActivity() {
                     Log.d("yyy", "callBackMethod")
                 }
             })
+        }
+        tv_thread_create.setOnClickListener {
+            threadOp.nativeInit()
+            threadOp.createNativeThread()
+//            threadOp.nativeFree()
         }
     }
 
