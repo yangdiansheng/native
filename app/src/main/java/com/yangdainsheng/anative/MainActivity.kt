@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     val threadOp = ThreadOp()
     val invokeConstructorOp = InvokeConstructorOp()
     val localAndGlobalReferenceOp = LocalAndGlobalReferenceOp()
+    val ExceptionOP = ExceptionOP()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,6 +68,16 @@ class MainActivity : AppCompatActivity() {
 //            LogUtil.d("cacheWithGlobalReference  = ${localAndGlobalReferenceOp.cacheWithGlobalReference()}");
 //            LogUtil.d("cacheWithGlobalReference  = ${localAndGlobalReferenceOp.errorCacheUseLocalReference()}");
             LogUtil.d("useWeakGlobalReference  = ${localAndGlobalReferenceOp.useWeakGlobalReference()}");
+        }
+        tv_exception.setOnClickListener {
+//            ExceptionOP.nativeInvokeJavaException()
+            try {
+//                ExceptionOP.nativeThrowException()
+                ExceptionOP.doit()
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
+
         }
     }
 

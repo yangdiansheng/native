@@ -36,8 +36,15 @@ add_library( # Sets the name of the library.
         ${CMAKE_SOURCE_DIR}/filed-and-animal-operation.cpp
         ${CMAKE_SOURCE_DIR}/invoke-constructor-operation.cpp
         ${CMAKE_SOURCE_DIR}/local-and-global-reference.cpp
+        ${CMAKE_SOURCE_DIR}/exception-operation.cpp
         ${CMAKE_SOURCE_DIR}/thread_operation.cpp)
 
+
+add_library(
+        common
+        SHARED
+        ${CMAKE_SOURCE_DIR}/common/commonutil.cpp
+)
 
 add_library(people-lib
         SHARED #动态库
@@ -65,6 +72,7 @@ find_library( # Sets the name of the path variable.
 target_link_libraries( # Specifies the target library.
         native-lib
         people-lib
+        common
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})
