@@ -55,8 +55,7 @@ Java_com_yangdainsheng_operations_InvokeConstructorOp_invokeAnimalConstructor(JN
  */
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_com_yangdainsheng_operations_InvokeConstructorOp_allocObjectConstructor(JNIEnv *env,
-                                                                             jobject thiz) {
+Java_com_yangdainsheng_operations_InvokeConstructorOp_allocObjectConstructor(JNIEnv *env,jobject thiz) {
     jclass cls = env->FindClass("com/yangdainsheng/bean/Animal");
     if(cls == NULL) return NULL;
     jmethodID mid = env->GetMethodID(cls,"<init>","(Ljava/lang/String;)V");

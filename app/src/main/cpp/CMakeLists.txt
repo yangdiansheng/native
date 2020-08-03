@@ -35,6 +35,7 @@ add_library( # Sets the name of the library.
         ${CMAKE_SOURCE_DIR}/string-type-operation.cpp
         ${CMAKE_SOURCE_DIR}/filed-and-animal-operation.cpp
         ${CMAKE_SOURCE_DIR}/invoke-constructor-operation.cpp
+        ${CMAKE_SOURCE_DIR}/local-and-global-reference.cpp
         ${CMAKE_SOURCE_DIR}/thread_operation.cpp)
 
 

@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     val filedAndMethodOp = FiledAndMethodOp()
     val threadOp = ThreadOp()
     val invokeConstructorOp = InvokeConstructorOp()
+    val localAndGlobalReferenceOp = LocalAndGlobalReferenceOp()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +63,11 @@ class MainActivity : AppCompatActivity() {
                 "invokeAnimalConstructor = ${animal2.name}\n" +
                 "allocObjectConstructor = ${animal3.name}\n" +
                 "callSuperMethod = ${invokeConstructorOp.callSuperMethod()}\n"
+        tv_referece.setOnClickListener {
+//            LogUtil.d("cacheWithGlobalReference  = ${localAndGlobalReferenceOp.cacheWithGlobalReference()}");
+//            LogUtil.d("cacheWithGlobalReference  = ${localAndGlobalReferenceOp.errorCacheUseLocalReference()}");
+            LogUtil.d("useWeakGlobalReference  = ${localAndGlobalReferenceOp.useWeakGlobalReference()}");
+        }
     }
 
     /**
