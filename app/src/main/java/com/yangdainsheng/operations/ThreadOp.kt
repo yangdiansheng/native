@@ -5,6 +5,8 @@ import com.yangdainsheng.utils.LogUtil
 
 class ThreadOp {
     external fun createNativeThread()
+    external fun createNativeThreadWithArgs()
+    external fun joinNativeThread()
     external fun nativeInit()
     external fun nativeFree()
 

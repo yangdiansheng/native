@@ -54,9 +54,11 @@ class MainActivity : AppCompatActivity() {
             })
         }
         tv_thread_create.setOnClickListener {
-            threadOp.nativeInit()
-            threadOp.createNativeThread()
+//            threadOp.nativeInit()
+//            threadOp.createNativeThread()
 //            threadOp.nativeFree()
+//            threadOp.createNativeThreadWithArgs()
+            threadOp.joinNativeThread()
         }
         val animal2 = invokeConstructorOp.invokeAnimalConstructor()
         val animal3 = invokeConstructorOp.allocObjectConstructor()

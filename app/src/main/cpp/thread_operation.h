@@ -24,6 +24,10 @@ Java_com_yangdainsheng_operations_ThreadOp_nativeInit(JNIEnv *env, jobject thiz)
 JNIEXPORT void JNICALL
 Java_com_yangdainsheng_operations_ThreadOp_nativeFree(JNIEnv *env, jobject thiz);
 
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_yangdainsheng_operations_ThreadOp_createNativeThreadWithArgs(JNIEnv *env, jobject thiz);
+
 
 #ifdef __cplusplus
 }
