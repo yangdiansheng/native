@@ -9,6 +9,9 @@ class ThreadOp {
     external fun joinNativeThread()
     external fun nativeInit()
     external fun nativeFree()
+    external fun waitNativeThread()
+    external fun waitNotifyThread()
+    external fun productAndConsumer()
 
     /**
      * 打印线程名称，并且模拟耗时任务

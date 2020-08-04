@@ -11,9 +11,17 @@
 void *printThreadHello(void *);
 void *printThreadHelloArgs(void *);
 void *printThreadJoin(void *);
+void *waitThread(void *);
+void *notifyThread(void *);
 
 static jmethodID printThreadName;
 static jmethodID printNativeMsg;
+
+pthread_mutex_t mutex;//锁
+pthread_cond_t cond;//条件变量
+pthread_t waitHandle;
+pthread_t notifyHandle;
+
 
 struct ThreadRunArgs{
     int id;
@@ -96,6 +104,22 @@ Java_com_yangdainsheng_operations_ThreadOp_joinNativeThread(JNIEnv *env, jobject
     }
 }
 
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_yangdainsheng_operations_ThreadOp_waitNativeThread(JNIEnv *env, jobject thiz) {
+    pthread_mutex_init(&mutex,nullptr);
+    pthread_cond_init(&cond,nullptr);
+
+    pthread_create(&waitHandle, nullptr,waitThread ,nullptr);
+
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_yangdainsheng_operations_ThreadOp_waitNotifyThread(JNIEnv *env, jobject thiz) {
+    pthread_create(&notifyHandle, nullptr,notifyThread ,nullptr);
+}
+
 void *printThreadHello(void *){
     LOGD("printThreadHello");
     JavaVM *gVm = getJvm();
@@ -129,5 +153,29 @@ void *printThreadJoin(void *arg){
     struct timeval end;
     gettimeofday(&end,NULL);
     LOGD("time used is=%d",end.tv_sec - begin.tv_sec);
+    pthread_exit(0);
+}
+
+int flag = 0;
+void *waitThread(void *){
+    LOGD("wait thread lock");
+    pthread_mutex_lock(&mutex);
+    while(flag == 0){
+        LOGD("waiting");
+        pthread_cond_wait(&cond, &mutex);
+    }
+    LOGD("wait thread unlock");
+    pthread_mutex_unlock(&mutex);
+    pthread_exit(0);
+}
+
+void *notifyThread(void *){
+    LOGD("notify thread lock");
+    pthread_mutex_lock(&mutex);
+    flag =1;
+    pthread_mutex_unlock(&mutex);
+    LOGD("notify thread unlock");
+    pthread_cond_signal(&cond);
+
     pthread_exit(0);
 }

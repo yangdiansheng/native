@@ -60,6 +60,15 @@ class MainActivity : AppCompatActivity() {
 //            threadOp.createNativeThreadWithArgs()
             threadOp.joinNativeThread()
         }
+        tv_thread_wait.setOnClickListener {
+            threadOp.waitNativeThread()
+        }
+        tv_thread_notify.setOnClickListener {
+            threadOp.waitNotifyThread()
+        }
+        tv_thread_product_and_consumer.setOnClickListener {
+            threadOp.productAndConsumer()
+        }
         val animal2 = invokeConstructorOp.invokeAnimalConstructor()
         val animal3 = invokeConstructorOp.allocObjectConstructor()
         tv_constructor.text = "invokeStringConstructor = ${invokeConstructorOp.invokeStringConstructor()}\n" +
@@ -79,7 +88,6 @@ class MainActivity : AppCompatActivity() {
             }catch (e:Exception){
                 e.printStackTrace()
             }
-
         }
     }
 

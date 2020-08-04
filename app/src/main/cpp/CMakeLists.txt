@@ -37,6 +37,7 @@ add_library( # Sets the name of the library.
         ${CMAKE_SOURCE_DIR}/invoke-constructor-operation.cpp
         ${CMAKE_SOURCE_DIR}/local-and-global-reference.cpp
         ${CMAKE_SOURCE_DIR}/exception-operation.cpp
+        ${CMAKE_SOURCE_DIR}/product-and-consumer.cpp
         ${CMAKE_SOURCE_DIR}/thread_operation.cpp)
 
 
