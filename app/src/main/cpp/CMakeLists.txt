@@ -38,6 +38,7 @@ add_library( # Sets the name of the library.
         ${CMAKE_SOURCE_DIR}/local-and-global-reference.cpp
         ${CMAKE_SOURCE_DIR}/exception-operation.cpp
         ${CMAKE_SOURCE_DIR}/product-and-consumer.cpp
+        ${CMAKE_SOURCE_DIR}/bitmap-operation.cpp
         ${CMAKE_SOURCE_DIR}/thread_operation.cpp)
 
 
@@ -74,6 +75,7 @@ target_link_libraries( # Specifies the target library.
         native-lib
         people-lib
         common
+        jnigraphics
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})

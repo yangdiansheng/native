@@ -12,6 +12,17 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_bitmap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="bitmap"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@android:color/black"
+            android:background="@android:color/holo_blue_bright"/>
+
+        <TextView
             android:id="@+id/tv_exception"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -89,6 +89,9 @@ class MainActivity : AppCompatActivity() {
                 e.printStackTrace()
             }
         }
+        tv_bitmap.setOnClickListener {
+            BitMapActivity.startActivity(this)
+        }
     }
 
     /**
